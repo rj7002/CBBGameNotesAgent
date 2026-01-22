@@ -36,9 +36,8 @@ cp .env.example .env
 ```
 
 4. Edit `.env` and add your API keys:
-   - `CBB_API_KEY`: Your CBB Analytics API key
-   - `CBB_API_BASE_URL`: The base URL for the CBB Analytics API
-   - `MISTRAL_KEY`: Your Mistral AI API key
+   - `CBB_API_BASE_URL`: The base URL
+   - `LLM_KEY`: Your Mistral AI API key
 
 ## Requirements
 
@@ -47,7 +46,6 @@ Create a `requirements.txt` file with:
 ```
 langchain
 langchain-community
-langchain-mistralai
 langgraph
 pandas
 numpy
@@ -92,7 +90,7 @@ requirements.txt           # Python dependencies
 
 ### Agent Architecture
 
-1. **Loader Agent**: Collects data from the CBB Analytics API
+1. **Loader Agent**: Collects data 
    - Fetches team statistics
    - Retrieves player information
    - Gathers quad record data
@@ -128,15 +126,14 @@ Files are saved as: `GameNotes_TeamName_YYYYMMDD_HHMMSS.pdf`
 
 The application can be configured through environment variables:
 
-- `CBB_API_KEY`: Authentication for basketball analytics API
 - `CBB_API_BASE_URL`: Base URL for API endpoints
-- `MISTRAL_KEY`: API key for Mistral AI language models
+- `LLM_KEY`: API key for a large language model
 
 ## API Requirements
 
 This project requires:
 - Access to a college basketball analytics API
-- Mistral AI API access for LLM capabilities
+- LLM API access for LLM capabilities
 
 ## Features in Detail
 
@@ -164,7 +161,6 @@ Players must meet minimum attempt thresholds in each zone to receive rankings fo
 ### API Connection Issues
 - Verify your API keys in `.env`
 - Check API base URL is correct
-- Ensure you have active API access
 
 ### PDF Generation Fails
 - Install reportlab: `pip install reportlab`
@@ -175,20 +171,3 @@ Players must meet minimum attempt thresholds in each zone to receive rankings fo
 - Check season/competition ID is valid
 - Ensure division ID is correct (1, 2, or 3)
 
-## Contributing
-
-This is a personal project, but suggestions and improvements are welcome!
-
-## License
-
-[Your chosen license]
-
-## Acknowledgments
-
-- CBB Analytics for comprehensive basketball statistics
-- Mistral AI for language model capabilities
-- LangChain/LangGraph for agent orchestration framework
-
-## Contact
-
-[Your contact information]
